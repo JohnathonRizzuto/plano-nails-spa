@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plano Nails Spa &mdash; Plano, IL</title>
+  <meta name="description" content="Plano Nails Spa: manicures, pedicures, gel, acrylic, dip powder, nail art. Call (779) 236-6206." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,400;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg:#fdf5f3; --paper:#fff; --surface:#f9e9e6; --line:#f0d5d0; --ink:#3a1f24; --ink-soft:#7a4a52; --ink-dim:#b48a8f; --rose:#d89aa3; --rose-deep:#b86a78; --gold:#c9a35a; --shadow:0 8px 24px rgba(58,31,36,0.10); --shadow-lift:0 16px 40px rgba(58,31,36,0.18); }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { font-family:'Manrope', sans-serif; color:var(--ink); background:var(--bg); line-height:1.65; -webkit-font-smoothing:antialiased; }
+    h1, h2, h3 { font-family:'Cormorant Garamond', serif; font-weight:700; line-height:1.1; }
+    h1 em, h2 em, h3 em { font-style:italic; font-weight:500; color:var(--rose-deep); }
+    header { position:sticky; top:0; z-index:100; background:rgba(253,245,243,0.94); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
+    .nav { max-width:1200px; margin:0 auto; padding:1rem 1.5rem; display:flex; align-items:center; justify-content:space-between; }
+    .logo { font-family:'Cormorant Garamond', serif; font-weight:700; font-size:1.55rem; }
+    .logo em { color:var(--rose-deep); font-style:italic; font-weight:500; }
+    .nav-call { padding:0.7rem 1.4rem; border-radius:999px; background:var(--rose-deep); color:var(--paper); text-decoration:none; font-weight:700; font-size:0.93rem; letter-spacing:0.04em; box-shadow:0 4px 14px rgba(184,106,120,0.3); transition:transform 0.15s, background 0.15s; }
+    .nav-call:hover { background:var(--ink); transform:translateY(-1px); }
+    .hero { padding:5rem 1.5rem 6rem; background:radial-gradient(ellipse 65% 50% at 80% 30%, rgba(201,163,90,0.13), transparent 70%), var(--bg); }
+    .hero-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1.1fr 1fr; gap:4rem; align-items:center; }
+    .hero-eyebrow { display:inline-block; padding:0.4rem 1.1rem; background:rgba(184,106,120,0.12); color:var(--rose-deep); border:1px solid rgba(184,106,120,0.25); border-radius:999px; font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:1.5rem; }
+    .hero h1 { font-size:clamp(3rem, 6vw, 5rem); margin-bottom:1.3rem; }
+    .hero-tagline { font-size:1.2rem; color:var(--ink-soft); margin-bottom:2.5rem; max-width:32rem; }
+    .hero-ctas { display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:2.5rem; }
+    .btn-primary { display:inline-flex; align-items:center; padding:1.2rem 2.4rem; border-radius:999px; background:var(--rose-deep); color:var(--paper); text-decoration:none; font-weight:800; font-size:1.08rem; letter-spacing:0.03em; box-shadow:0 8px 24px rgba(184,106,120,0.32); transition:transform 0.15s, background 0.15s; animation:pulse-rose 2.5s ease-in-out infinite; }
+    @keyframes pulse-rose { 0%,100% { box-shadow:0 8px 24px rgba(184,106,120,0.30); } 50% { box-shadow:0 8px 36px rgba(184,106,120,0.50); } }
+    .btn-primary:hover { background:var(--ink); transform:translateY(-3px); animation:none; }
+    .btn-outline { display:inline-flex; align-items:center; padding:1.1rem 2rem; border-radius:999px; border:1.5px solid var(--ink); color:var(--ink); text-decoration:none; font-weight:700; font-size:1rem; transition:background 0.15s, color 0.15s; }
+    .btn-outline:hover { background:var(--ink); color:var(--paper); }
+    .hero-meta { display:flex; gap:2.5rem; flex-wrap:wrap; padding-top:1.8rem; border-top:1.5px solid var(--line); color:var(--ink-soft); font-size:0.95rem; }
+    .hero-meta-item strong { color:var(--ink); font-weight:700; }
+    .hero-photo { border-radius:18px; overflow:hidden; box-shadow:var(--shadow-lift); aspect-ratio:4/5; transform:rotate(-1.2deg); }
+    .hero-photo img { width:100%; height:100%; object-fit:cover; }
+    section { padding:5rem 1.5rem; }
+    .wrap { max-width:1200px; margin:0 auto; }
+    .section-head { text-align:center; margin-bottom:3.5rem; }
+    .section-head .eyebrow { display:inline-block; color:var(--rose-deep); font-size:0.82rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:0.8rem; }
+    .section-head h2 { font-size:clamp(2.4rem, 4.5vw, 3.6rem); }
+    .about { background:var(--surface); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .about-grid { display:grid; grid-template-columns:1.1fr 1fr; gap:4rem; align-items:center; }
+    .about p { color:var(--ink-soft); margin-bottom:1.1rem; font-size:1.05rem; }
+    .stats-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; }
+    .stat { background:var(--paper); border:1px solid var(--line); padding:1.4rem 1.2rem; border-radius:12px; text-align:center; }
+    .stat-num { font-family:'Cormorant Garamond', serif; font-weight:700; font-size:2.6rem; color:var(--rose-deep); line-height:1; font-style:italic; }
+    .stat-label { font-size:0.78rem; color:var(--ink-soft); letter-spacing:0.1em; text-transform:uppercase; font-weight:600; margin-top:0.3rem; }
+    .services-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1.5rem; }
+    .service-card { background:var(--paper); padding:2rem; border-radius:14px; border:1px solid var(--line); transition:transform 0.2s, border-color 0.2s; }
+    .service-card:hover { transform:translateY(-4px); border-color:var(--rose-deep); }
+    .service-card h3 { font-size:1.6rem; margin-bottom:0.3rem; }
+    .service-card .price { color:var(--rose-deep); font-weight:700; font-size:1.3rem; font-family:'Cormorant Garamond', serif; font-style:italic; margin-bottom:0.7rem; }
+    .service-card .desc { color:var(--ink-soft); font-size:0.97rem; }
+    .price-note { text-align:center; color:var(--ink-dim); font-size:0.85rem; margin-top:2rem; font-style:italic; }
+    .map-wrap { border-radius:14px; overflow:hidden; border:1px solid var(--line); box-shadow:var(--shadow); }
+    .map-wrap iframe { width:100%; height:380px; border:0; display:block; }
+    .cta-band { background:linear-gradient(135deg, var(--rose-deep) 0%, #8a4555 100%); color:var(--paper); text-align:center; padding:5rem 1.5rem; }
+    .cta-band h2 { font-size:clamp(2.4rem, 4.5vw, 3.6rem); margin-bottom:1rem; color:var(--paper); }
+    .cta-band p { color:rgba(255,255,255,0.85); margin-bottom:2.5rem; font-size:1.1rem; }
+    .cta-band .btn-primary { background:var(--paper); color:var(--rose-deep); animation:none; }
+    .cta-band .btn-primary:hover { background:#f5e1e1; transform:translateY(-3px); }
+    footer { background:#2b181c; color:rgba(253,245,243,0.7); padding:3rem 1.5rem 2.5rem; text-align:center; }
+    footer .footer-logo { font-family:'Cormorant Garamond', serif; font-weight:700; font-size:1.45rem; color:var(--paper); margin-bottom:1rem; }
+    footer .footer-logo em { color:var(--gold); font-style:italic; font-weight:500; }
+    footer a { color:rgba(253,245,243,0.85); text-decoration:none; margin:0 0.7rem; font-size:0.95rem; }
+    footer a:hover { color:var(--gold); }
+    footer .copyright { font-size:0.83rem; color:rgba(253,245,243,0.5); margin-top:1.5rem; }
+    @media (max-width:800px) { .hero { padding:3rem 1.5rem 4rem; } .hero-inner { grid-template-columns:1fr; gap:2.5rem; } .hero-photo { aspect-ratio:4/3; transform:none; } .about-grid { grid-template-columns:1fr; gap:2.5rem; } section { padding:3.5rem 1.5rem; } body { padding-bottom:5.5rem; } }
+    .sticky-cta { display:none; }
+    @media (max-width:800px) { .sticky-cta { display:flex; position:fixed; bottom:0; left:0; right:0; background:rgba(253,245,243,0.97); backdrop-filter:blur(10px); border-top:1px solid var(--line); padding:0.8rem 1rem; z-index:99; } .sticky-cta .btn-primary { width:100%; justify-content:center; animation:none; padding:1rem; font-size:1.05rem; } }
+  </style>
+</head>
+<body>
+  <header><nav class="nav">
+    <div class="logo">Plano <em>Nails Spa</em></div>
+    <a class="nav-call" href="tel:7792366206">Call to Book</a>
+  </nav></header>
+  <section class="hero"><div class="hero-inner">
+    <div>
+      <span class="hero-eyebrow">Plano, IL &middot; Nail Salon</span>
+      <h1>Manis, pedis,<br /><em>nail art done right.</em></h1>
+      <p class="hero-tagline">Classic manicures, gel, acrylic, dip powder, nail design. Open six days a week with walk-ins welcome &mdash; call ahead for prime weekend slots.</p>
+      <div class="hero-ctas">
+        <a class="btn-primary" href="tel:7792366206">Call (779) 236-6206</a>
+        <a class="btn-outline" href="#services">View Services</a>
+      </div>
+      <div class="hero-meta">
+        <div class="hero-meta-item"><strong>7000 Burroughs Ave</strong> &middot; Plano, IL 60545</div>
+        <div class="hero-meta-item"><strong>Mon&ndash;Sat</strong> Open</div>
+      </div>
+    </div>
+    <div class="hero-photo"><!-- REPLACE WITH REAL PHOTO --><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=80" alt="Painted nails on a marble counter" /></div>
+  </div></section>
+  <section class="about"><div class="wrap"><div class="about-grid">
+    <div>
+      <div class="section-head" style="text-align:left; margin-bottom:1.5rem;">
+        <span class="eyebrow">About the spa</span>
+        <h2 style="font-size:clamp(2rem, 4vw, 3rem);">Where Plano gets <em>nail-perfect.</em></h2>
+      </div>
+      <p>We do hands and feet right: classic manicures, gel, acrylic sets, dip powder, and the custom nail art that turns heads. Sit back, relax, and walk out feeling polished.</p>
+      <p>Walk-ins welcome, but Friday and Saturday fill up fast &mdash; call to lock your slot.</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat"><div class="stat-num">300+</div><div class="stat-label">Reviews on Facebook</div></div>
+      <div class="stat"><div class="stat-num">6</div><div class="stat-label">Days a Week</div></div>
+      <div class="stat"><div class="stat-num">10&ndash;7</div><div class="stat-label">Mon&ndash;Fri</div></div>
+      <div class="stat"><div class="stat-num">10&ndash;6</div><div class="stat-label">Saturday</div></div>
+    </div>
+  </div></div></section>
+  <section id="services"><div class="wrap">
+    <div class="section-head"><span class="eyebrow">The menu</span><h2>Services &amp; <em>pricing</em></h2></div>
+    <div class="services-grid">
+      <div class="service-card"><h3>Classic Manicure</h3><div class="price">$22 &#10033;</div><div class="desc">Shape, cuticle, polish. The basic done well.</div></div>
+      <div class="service-card"><h3>Gel Manicure</h3><div class="price">$35 &#10033;</div><div class="desc">Chip-resistant gel polish, cured under lamp. Lasts 2 weeks.</div></div>
+      <div class="service-card"><h3>Classic Pedicure</h3><div class="price">$32 &#10033;</div><div class="desc">Soak, scrub, cuticle, polish, hot towel finish.</div></div>
+      <div class="service-card"><h3>Dip Powder Set</h3><div class="price">$45 &#10033;</div><div class="desc">Durable color set with dip powder application.</div></div>
+      <div class="service-card"><h3>Acrylic Full Set</h3><div class="price">$55 &#10033;</div><div class="desc">Tips applied, shaped, and colored. Refills $35.</div></div>
+      <div class="service-card"><h3>Nail Art (per nail)</h3><div class="price">$3+ &#10033;</div><div class="desc">Custom designs &mdash; ask your tech.</div></div>
+    </div>
+    <p class="price-note">&#10033; Prices shown are placeholders &mdash; confirm with the spa before launch.</p>
+  </div></section>
+  <section><div class="wrap">
+    <div class="section-head"><span class="eyebrow">Find us</span><h2>7000 Burroughs Ave, <em>Plano</em></h2></div>
+    <div class="map-wrap"><iframe src="https://www.google.com/maps?q=7000+Burroughs+Ave+Plano+IL+60545&output=embed" allowfullscreen loading="lazy"></iframe></div>
+  </div></section>
+  <section class="cta-band">
+    <h2>Ready for a <em>fresh set?</em></h2>
+    <p>Call ahead so we'll have a tech waiting when you walk in.</p>
+    <a class="btn-primary" href="tel:7792366206">Call (779) 236-6206</a>
+  </section>
+  <footer>
+    <div class="footer-logo">Plano <em>Nails Spa</em></div>
+    <div><a href="tel:7792366206">Call</a> &middot; <a href="https://maps.apple.com/?q=7000+Burroughs+Ave+Plano+IL+60545">Directions</a> &middot; <a href="https://www.facebook.com/PlanoNailsSpaPlano/" target="_blank" rel="noopener">Facebook</a></div>
+    <div class="copyright">&copy; 2026 Plano Nails Spa &middot; 7000 Burroughs Ave, Plano, IL 60545</div>
+  </footer>
+  <div class="sticky-cta"><a class="btn-primary" href="tel:7792366206">Call to Book</a></div>
+</body>
+</html>
